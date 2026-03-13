@@ -317,6 +317,10 @@ header a:hover {
   border-radius: 2px;
 }
 
+.no-line::after {
+  display: none;
+}
+
 .carousel_infocosmet {
   width: 100%;
   position: relative;
@@ -1056,26 +1060,21 @@ hr {
     gap: 10px;
     flex-wrap: wrap;
   }
-  .slide::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 1px;
-    height: 70%;
-    background: linear-gradient(to bottom, transparent, rgba(225, 100, 99, 0.4), transparent);
-    pointer-events: none;
+  .info_carta {
+    font-size: 0.95em;
+  }
+  ul {
+    font-size: 0.85em;
   }
   /* 🔥 CARRUSEL TRATAMIENTOS (ARREGLADO) */
   .carta-tratamientos {
     display: flex;
-    gap: 30px;
+    gap: 20px;
   }
   .carta {
-    flex: 0 0 calc((100% - 30px) / 2);
-    height: 520px;
-    border-radius: 20px;
+    flex: 0 0 100%;
+    min-height: 560px;
+    padding: 40px 30px;
   }
   .sobre-container {
     flex-direction: row;
@@ -1136,6 +1135,17 @@ hr {
     flex-direction: row;
     justify-content: center;
     gap: 40px;
+  }
+  .slide::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1px;
+    height: 70%;
+    background: linear-gradient(to bottom, transparent, rgba(225, 100, 99, 0.4), transparent);
+    pointer-events: none;
   }
   /* Contenedor de cada imagen */
   .img-wrapper {
