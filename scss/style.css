@@ -302,7 +302,7 @@ header a:hover {
   letter-spacing: 1.5px;
   text-transform: uppercase;
   max-width: 65ch;
-  margin: 0 auto;
+  margin: 0 auto 80px auto; /* ← separación abajo */
   text-align: center;
 }
 
@@ -340,6 +340,7 @@ header a:hover {
   justify-content: center;
   gap: 40px;
   position: relative;
+  min-width: 100%;
 }
 
 .slide:hover img {
