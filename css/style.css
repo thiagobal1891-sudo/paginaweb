@@ -279,7 +279,11 @@ transform:translateY(0);
 }
 .section-title{ 
   text-align:center;
-  position:relative; }
+  position:relative;
+  }
+  #Tratamientos .section-title {
+  padding-top: 70px;
+}
 .section-title.show{
   opacity:1;
   transform:translateY(0);
