@@ -165,7 +165,7 @@ header .logo {
 
 header .logo img{
   height: clamp(45px, 6vw, 70px);
-
+  width: auto;
   width: auto;
 }
 header .container {
@@ -931,8 +931,7 @@ header{
 }
 
 header .logo img{
-  width:auto;
-  height: 50px;
+  width:110px;
 }
 .slide{
   flex-direction:column;

@@ -164,8 +164,7 @@ header .logo {
 }
 
 header .logo img{
-  height: clamp(45px, 6vw, 70px);
-
+  height: 100%;
   width: auto;
 }
 header .container {
@@ -931,8 +930,7 @@ header{
 }
 
 header .logo img{
-  width:auto;
-  height: 50px;
+  width:110px;
 }
 .slide{
   flex-direction:column;
@@ -1079,6 +1077,8 @@ header nav {
 }
 .carta{
   flex:0 0 calc((100% - 30px) / 2);
+  min-height:520px;
+  height:auto;
   border-radius:20px;
   padding:50px 60px;
 }
