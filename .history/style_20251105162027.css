@@ -1,0 +1,546 @@
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: 'Melodrama', serif;
+    margin: 0;
+    padding-top: 120px;
+}
+
+h1{ font-size: 3.5em;}
+h2{ font-size: 2.7em;}
+h3{ font-size: 2em;}
+p{ font-size: 1.25em;}
+ul{ list-style: none;}
+li{ font-size: 1.25em;}
+
+button{
+        font-size: 1.5em;
+    font-weight: 400;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1.5px solid white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    color: white;
+    background-color: #E16463;
+    font-family: "Inter", sans-serif;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+button:hover{
+    background-color: white;
+    color: #E16463;     
+    border-color: white;       
+}
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+}
+
+
+header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+header .logo img {
+    width: 140px; /* ajusta según tu diseño */
+    height: 120px;
+    border-radius: 50%; /* si querés que sea redondo */
+    object-fit: cover;
+}
+
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav {
+    display: flex;
+    flex-direction: row; /* 🔹 cambia "column" por "row" */
+    justify-content: center; /* opcional: centra los ítems horizontalmente */
+    align-items: center;     /* opcional: los alinea verticalmente */
+    text-align: center;
+}
+
+
+header a{
+    padding: 0px 5px;
+    text-decoration: none;
+    font-weight: 400;
+    color: rgb(84, 84, 84);
+    display: inline-block;
+    font-family: "Inter", sans-serif;
+    margin: 0 15px;
+}
+
+header a:hover{
+    background-color: white;
+    color: black;     
+    border-color: white;       
+}
+
+#hero{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    height: 90vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media/fotopiel-rutina-de-skincare-cuidado-facial.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#hero h1{
+    color: white;
+    font-family: 'Cormorant Garamond';
+    font-weight: 600;
+}
+
+#hero button{
+    font-size: 1.75em;
+}
+
+#infocosmet .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 24px;
+    padding: 60px 12px;
+    background: none ; 
+    height: auto;       
+    box-sizing: border-box;
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 35%, #E16463 65%, #E16463 100%);
+}
+
+#infocosmet .img-container {
+    background-image: url("media/procedimientos-de-cosmetologia.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    max-width: 900px; 
+    height: 260px;
+    border-radius: 10px;
+    flex: 0 0 auto; 
+    overflow: hidden;
+}
+
+#infocosmet .texto{
+    color: white;
+}
+
+#Tratamientos{
+    background-color: white;  
+    color: black;
+    text-align: center;
+    
+}
+
+#Tratamientos .container{
+    padding: 150px 12px;
+}
+
+#Tratamientos h2{
+    margin-top: 0;
+    font-size: 3.2em;
+}
+
+
+
+#Tratamientos .carta{
+    background-position: center center;
+    background-size: cover;
+    padding: 50px 0px;
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(3, 3, 3, 0.5);
+}
+
+.carta:first-child{
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media/Tratamientos-3.jpeg");
+
+}
+
+.carta:nth-child(2){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media/Tratamientos-2.jpg");
+}
+
+.carta:nth-child(3){
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+    )
+    ,url("media/Tratamientos-1.jpg");
+
+}
+#caracteristicas .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to bottom, #E16463 0%, #ffffff 55%, #ffffff 55%, #ffffff 100%);
+    padding: 50px 20px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+
+#caracteristicas .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1rem;
+    color: #000000;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-family: "Inter", sans-serif;
+}
+
+
+#caracteristicas .contact-map {                
+    display: flex;
+    justify-content: flex-end;   
+    height: 300px;
+
+    overflow: hidden;
+}
+
+.contact-info .valor {
+    color: #E16463; 
+}
+
+
+#caracteristicas .contact-map iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(1) brightness(0.9);
+}
+
+#caracteristicas li{
+    margin: 16px 0px;
+    font-weight: bold;
+}
+
+
+#agenda-ya {
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    padding: 50px 20px;
+    background-color: white;
+}
+
+#agenda-ya h2 {
+    color: #E16463; /* relleno */
+    text-shadow:
+    -1px -1px 0 black,
+    1px -1px 0 black,
+    -1px  1px 0 black,
+    1px  1px 0 black; /* 🔹 simula borde negro */
+    font-family: "Inter", sans-serif;
+    font-weight: 700;
+}
+
+
+
+
+#reserva-form {
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    font-family: 'Inter', sans-serif;
+}
+
+#reserva-form label { font-weight: 600; color: #333; }
+
+#reserva-form input,
+#reserva-form textarea {
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+#reserva-form input:focus,
+#reserva-form textarea:focus {
+    outline: none;
+    border-color: #E16463;
+    box-shadow: 0 0 5px rgba(225,100,99,0.5);
+}
+#reserva-form textarea { resize: vertical; min-height: 100px; }
+#reserva-form button {
+    background-color: #E16463;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+#reserva-form button:hover {
+    background-color: #c75157;
+    transform: translateY(-2px);
+}
+
+/* 🎨 Fondo del calendario */
+.flatpickr-calendar {
+    background: #fff8f6;
+    border: 2px solid #d2a6a6;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 📆 Color de los días */
+.flatpickr-day {
+    color: #444;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+}
+
+/* 📅 Día seleccionado */
+.flatpickr-day.selected {
+    background: #b57f7f;
+    color: white;
+    font-weight: bold;
+}
+
+/* 🚫 Días deshabilitados (sábado y domingo) */
+.flatpickr-day.disabled {
+    color: #fa0303;
+    cursor: not-allowed;
+    background: #f5f5f5;
+}
+
+/* 🔁 Hover */
+.flatpickr-day:hover {
+    background: #f1d2d2;
+}
+
+/* 📍 Encabezado */
+.flatpickr-months .flatpickr-month {
+    background: #e9bfbf;
+    color: #5a2d2d;
+    border-radius: 10px 10px 0 0;
+}
+
+
+
+footer{
+    background-color: rgb(26, 24, 24);
+}
+
+footer p{
+    margin: 0;
+    padding: 12px;
+    color: rgb(100,100,100);
+}
+
+footer .container{
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+@media (min-width: 850px){
+    header{
+        position: fixed;
+        width: 100%;
+    }
+
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    header nav{
+        flex-direction: row;
+        padding-bottom: 0;
+        padding-right: 20px;
+    }
+
+    #hero h1{
+        font-size: 5em;
+    }
+
+    #infocosmet .container {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 80px 60px;
+    }
+
+    #infocosmet .texto{
+        width: 50%;
+        max-width: 600px;
+        text-align: initial;
+        padding-left: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #infocosmet h2{
+        margin-top: 0px;
+    }
+
+    #infocosmet .img-container {
+    background-image: url("media/procedimientos-de-cosmetologia.jpg");
+    background-size: cover;
+    background-position: center;
+    width: 500px;
+    height: 400px;
+    border-radius: 10px;
+    flex: 0 0 auto; /* no dejar que flex la estire indebidamente */
+    overflow: hidden;
+}
+
+    #Tratamientos .container{
+        display: flex;
+        justify-content: center;
+    }
+
+    #Tratamientos p{
+        display: block;
+        margin-bottom: 30px;
+    }
+
+    #Tratamientos h2{
+        font-size: 4em;
+    }
+
+    #Tratamientos h3{
+        margin-top: 0;
+    }
+
+    #Tratamientos .carta{
+        padding: 50px;
+        background-size: 100% 150px;
+        background-repeat: no-repeat;
+        background-position-y: 0;
+        background-color: rgba(50, 50, 50, 1);
+        box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .carta:first-child{
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("media/Tratamientos-3.jpeg");
+
+    }
+
+    .carta:nth-child(2){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("media/Tratamientos-2.jpg");
+    }
+
+    .carta:nth-child(3){
+        background-image: linear-gradient(
+            0deg,
+            rgba(0,0,0,0.5),
+            rgba(0,0,0,0.5)
+        )
+        ,url("media/Tratamientos-1.jpg");
+
+    }
+
+    #caracteristicas{
+
+    }
+
+    #caracteristicas .container{
+        text-align: initial;
+        align-items:  center center;
+    }
+
+    
+    #caracteristica .contact-map {
+        justify-content: flex-start;
+    }
+
+
+
+
+    #caracteristicas ul{
+        margin-left: 100px;
+    }
+
+    #agenda-ya h2{
+        font-size: 5em;
+    }
+
+    #agenda-ya button{
+        font-size: 2em;
+    }
+
+    footer .container{
+        justify-content: flex-end;
+    }
+}
+
+@media (min-width: 1200px) {
+    #caracteristicas{
+        background-position-x: calc(100vw - 800px);
+    }
+}
