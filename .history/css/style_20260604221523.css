@@ -1,0 +1,33 @@
+
+    <!-- ═══════════ POR QUÉ ELEGIRNOS ═══════════ -->
+    <section class="confianza appear" aria-labelledby="confianza-titulo">
+      <div class="container">
+        <div class="section-title">
+          <h3>Nuestro compromiso</h3>
+          <h2 id="confianza-titulo">¿Por qué elegirnos?</h2>
+          <p>Compromiso con la salud y belleza de tu piel</p>
+        </div>
+        <div class="confianza-grid">
+          <div class="confianza-item appear">
+            <i class="fa-solid fa-user-check" aria-hidden="true"></i>
+            <h3>Atención personalizada</h3>
+            <p>Cada tratamiento se adapta a las necesidades específicas de tu piel.</p>
+          </div>
+          <div class="confianza-item appear">
+            <i class="fa-solid fa-spa" aria-hidden="true"></i>
+            <h3>Productos profesionales</h3>
+            <p>Trabajo con productos de alta calidad para garantizar mejores resultados.</p>
+          </div>
+          <div class="confianza-item appear">
+            <i class="fa-solid fa-microscope" aria-hidden="true"></i>
+            <h3>Tecnología avanzada</h3>
+            <p>Aparatología moderna que potencia cada tratamiento estético.</p>
+          </div>
+          <div class="confianza-item appear">
+            <i class="fa-solid fa-heart" aria-hidden="true"></i>
+            <h3>Cuidado integral</h3>
+            <p>El objetivo es lograr una piel saludable, luminosa y equilibrada.</p>
+          </div>
+        </div>
+      </div>
+    </section>

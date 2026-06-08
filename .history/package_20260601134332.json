@@ -1,0 +1,14 @@
+{
+  "name": "paginawebmama_",
+  "version": "1.0.0",
+  "main": "script.js",
+"scripts": {
+  "sass": "sass --watch sass/style.scss:scss/style.css"
+},
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.x.x"
+  }
+}
