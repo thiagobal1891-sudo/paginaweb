@@ -148,90 +148,43 @@ document.addEventListener("DOMContentLoaded", () => {
   if (footer) footerObserver.observe(footer);
 
   // ══════════════════════════════════════════════
-  //  CARRUSEL TRATAMIENTOS — infinito por clonado
+  //  CARRUSEL TRATAMIENTOS
   // ══════════════════════════════════════════════
-  (() => {
-    const track = document.querySelector(".carta-tratamientos");
-    const nextBtn = document.querySelector(".arrow.right");
-    const prevBtn = document.querySelector(".arrow.left");
-    if (!track || !nextBtn || !prevBtn) return;
+  const trackTrat = document.querySelector(".carta-tratamientos");
+  const nextBtn   = document.querySelector(".arrow.right");
+  const prevBtn   = document.querySelector(".arrow.left");
 
+  if (trackTrat && nextBtn && prevBtn) {
     // Cuántas cartas avanzan por click según breakpoint
     const visibleCount = () => window.innerWidth >= 1024 ? 2 : 1;
 
-    // ── Clonar todas las cartas al final y al inicio ──
-    const originals = Array.from(track.querySelectorAll(".carta"));
-    const total = originals.length;
-
-    originals.forEach(card => track.appendChild(card.cloneNode(true)));
-    originals.forEach(card => track.insertBefore(card.cloneNode(true), track.firstChild));
-
-    // Helper: lista fresca de todas las cartas (incluye clones)
-    const allCards = () => Array.from(track.querySelectorAll(".carta"));
-
-    // Empezamos en el primer original (posición = total, tras los clones del inicio)
-    let currentIndex = total;
-    let isAnimating = false;
-
-    // Teleport sin animación
-    const jumpTo = (index) => {
-      track.style.scrollBehavior = "auto";
-      track.scrollLeft = allCards()[index].offsetLeft;
-      track.getBoundingClientRect(); // fuerza reflow
-      track.style.scrollBehavior = "smooth";
-    };
-
-    // Scroll animado hacia índice
-    const scrollToIndex = (index) => {
-      track.scrollTo({ left: allCards()[index].offsetLeft, behavior: "smooth" });
-    };
-
-    // Carta más cercana al borde izquierdo visible
-    const getNearestIndex = () => {
-      const cards = allCards();
-      const sl = track.scrollLeft;
-      let closest = 0, minDist = Infinity;
+    // Detecta el índice de la carta más cercana al scroll actual
+    const getCurrentIndex = () => {
+      const cards = Array.from(trackTrat.querySelectorAll(".carta"));
+      const scrollLeft = trackTrat.scrollLeft;
+      let closest = 0;
+      let minDist = Infinity;
       cards.forEach((card, i) => {
-        const d = Math.abs(card.offsetLeft - sl);
-        if (d < minDist) { minDist = d; closest = i; }
+        const dist = Math.abs(card.offsetLeft - scrollLeft);
+        if (dist < minDist) { minDist = dist; closest = i; }
       });
       return closest;
     };
 
-    // Posición inicial sin flash
-    jumpTo(currentIndex);
-
-    // ── Navegación por flechas ──
-    const navigate = (dir) => {
-      if (isAnimating) return;
-      isAnimating = true;
-      currentIndex += dir * visibleCount();
-      scrollToIndex(currentIndex);
-
-      setTimeout(() => {
-        // Entró en clones del final → teleportar al inicio real
-        if (currentIndex >= total * 2) { currentIndex -= total; jumpTo(currentIndex); }
-        // Entró en clones del inicio → teleportar al final real
-        if (currentIndex < total)      { currentIndex += total; jumpTo(currentIndex); }
-        isAnimating = false;
-      }, 420);
+    // Scroll exacto al offsetLeft de la carta destino
+    const scrollToIndex = (index) => {
+      const cards = Array.from(trackTrat.querySelectorAll(".carta"));
+      const clamped = Math.max(0, Math.min(index, cards.length - 1));
+      trackTrat.scrollTo({ left: cards[clamped].offsetLeft, behavior: "smooth" });
     };
 
-    nextBtn.addEventListener("click", () => navigate(1));
-    prevBtn.addEventListener("click", () => navigate(-1));
-
-    // ── Sincronizar si el usuario arrastra manualmente ──
-    let dragTimer;
-    track.addEventListener("scroll", () => {
-      clearTimeout(dragTimer);
-      dragTimer = setTimeout(() => {
-        if (isAnimating) return;
-        currentIndex = getNearestIndex();
-        if (currentIndex >= total * 2) { currentIndex -= total; jumpTo(currentIndex); }
-        if (currentIndex < total)      { currentIndex += total; jumpTo(currentIndex); }
-      }, 150);
-    }, { passive: true });
-  })();
+    nextBtn.addEventListener("click", () => {
+      scrollToIndex(getCurrentIndex() + visibleCount());
+    });
+    prevBtn.addEventListener("click", () => {
+      scrollToIndex(getCurrentIndex() - visibleCount());
+    });
+  }
 
   // ══════════════════════════════════════════════
   //  EMAILJS
